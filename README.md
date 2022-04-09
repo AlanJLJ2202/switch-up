@@ -1,6 +1,6 @@
-# switch_up
+# Switch_up
 
-A new Flutter project.
+Exchange Network
 
 ## Getting Started
 
