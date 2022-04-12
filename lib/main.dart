@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:switch_up/TabPage.dart';
 import 'LoginPage.dart';
 
 void main(){
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget{
       title: "Flutter Login",
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
+
     );
   }
 }
