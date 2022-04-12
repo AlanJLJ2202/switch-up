@@ -6,7 +6,8 @@ class ItemPage extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-      body: new Text("Pagina Item"),
+      body: new Text("Que haces"),
+
     );
   }
 }
