@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:switch_up/Pages/TabPage.dart';
+import 'package:switch_up/constants.dart';
 
 class LoginPage extends StatefulWidget{
   @override
   _LoginPageState createState() => _LoginPageState();
 }
-
-
 
 class _LoginPageState extends State<LoginPage>{
 
@@ -203,7 +202,7 @@ class _LoginPageState extends State<LoginPage>{
               text: 'Registrarse',
 
               style: TextStyle(
-                color: Colors.grey,
+                color: kPrimaryColor,
                 fontSize: 18,
                 fontWeight: FontWeight.bold
               )
@@ -230,8 +229,8 @@ class _LoginPageState extends State<LoginPage>{
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xB7000000),
-                      Color(0x99616365),
+                      kPrimaryColor,
+                      kPrimaryColor,
                       Color(0xccbdb6b6),
                       Color(0xffffffff),
                     ]
