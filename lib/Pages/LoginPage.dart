@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:switch_up/TabPage.dart';
+import 'package:switch_up/Pages/TabPage.dart';
 
 class LoginPage extends StatefulWidget{
   @override

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:switch_up/InicioPage.dart';
-import 'package:switch_up/ItemPage.dart';
-import 'package:switch_up/SearchPage.dart';
-import 'package:switch_up/SwicthPage.dart';
+import 'package:switch_up/Pages/InicioPage.dart';
+import 'package:switch_up/Pages/ItemPage.dart';
+import 'package:switch_up/Pages/SearchPage.dart';
+import 'package:switch_up/Pages/SwicthPage.dart';
 
 class TabPage extends StatefulWidget{
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:switch_up/TabPage.dart';
-import 'LoginPage.dart';
+import 'package:switch_up/Pages/TabPage.dart';
+import 'Pages/LoginPage.dart';
 
 void main(){
   runApp(MyApp());
