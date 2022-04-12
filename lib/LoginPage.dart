@@ -201,7 +201,7 @@ class _LoginPageState extends State<LoginPage>{
             ),
             TextSpan(
               text: 'Registrarse',
-              
+
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 18,
