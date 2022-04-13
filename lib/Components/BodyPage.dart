@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:switch_up/constants.dart';
 
 import 'HeaderWithSearchBox.dart';
+import 'RecomendadosLista.dart';
+import 'Recomends.dart';
+import 'TitleWithMoreBtn.dart';
 
 class BodyPage extends StatelessWidget{
   @override
@@ -20,82 +23,15 @@ class BodyPage extends StatelessWidget{
             title: "Categorias",
             press: () {},
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class TitleWithMoreBtn extends StatelessWidget {
-  const TitleWithMoreBtn({
-    Key? key, required this.title, required this.press,
-  }) : super(key: key);
-
-  final String title;
-  final Function press;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-      child: Row(
-        children: [
-          TitleWithCustomUnderline(text: title),
-          Spacer(),
-          FlatButton(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-            ),
-              color: kPrimaryColor,
-              onPressed: () {},
-              child: Text(
-                "More",
-                style: TextStyle(color: Colors.white),
-              ),
+          //Solo tomara el 40% del ancho
+          Recomends(),
+          TitleWithMoreBtn(
+              title: "Recomendados",
+              press: () {}),
+          RecomendadosLista(),
+          SizedBox(
+            height: kDefaultPadding,
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class TitleWithCustomUnderline extends StatelessWidget {
-  const TitleWithCustomUnderline({
-    Key? key,
-    required this.text
-  }) : super(key: key);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 24,
-      child: Stack(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(
-                left: kDefaultPadding / 4,
-                right: 20
-            ),
-            child: Text(
-              text,
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              margin: EdgeInsets.only(right: kDefaultPadding / 4),
-              height: 7,
-              color: kPrimaryColor.withOpacity(0.2),
-            ),
-          )
         ],
       ),
     );
