@@ -20,7 +20,7 @@ class BodyPage extends StatelessWidget{
         children: <Widget>[
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(
-            title: "Categorias",
+            title: "Productos",
             press: () {},
           ),
           //Solo tomara el 40% del ancho

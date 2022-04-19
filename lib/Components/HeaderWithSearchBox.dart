@@ -34,7 +34,7 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  'Switch-Up',
+                  'Catalogo',
                   style: Theme.of(context).textTheme.headline5?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
@@ -66,7 +66,7 @@ class HeaderWithSearchBox extends StatelessWidget {
               ),
               child: TextField(
                 decoration: InputDecoration(
-                    hintText: "Search",
+                    hintText: "Buscar",
                     hintStyle: TextStyle(
                       color: kPrimaryColor.withOpacity(0.5),
                     ),

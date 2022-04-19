@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage>{
           'Email',
           style: TextStyle(
               color: Colors.white,
-              fontSize: 26,
+              fontSize: 22,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage>{
           'Password',
           style: TextStyle(
               color: Colors.white,
-              fontSize: 26,
+              fontSize: 22,
               fontWeight: FontWeight.bold
           ),
         ),
@@ -175,7 +175,7 @@ class _LoginPageState extends State<LoginPage>{
         child: Text(
           'Ingresar',
           style: TextStyle(
-            color: Color(0xcc000000),
+            color: Colors.black,
             fontSize: 18,
             fontWeight: FontWeight.bold
           ),
@@ -249,7 +249,7 @@ class _LoginPageState extends State<LoginPage>{
                       'Bienvenido',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 70,
+                          fontSize: 50,
                           fontWeight: FontWeight.bold
                       ),
                     ),

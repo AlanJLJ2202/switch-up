@@ -15,22 +15,22 @@ class Recomends extends StatelessWidget {
         children: [
           RecomendCard(
             image: "lib/assets/images/image_1.png",
-            title: "Libros",
-            title2: "Books",
+            title: "Producto 1",
+            title2: "Info",
             price: 440,
             press: () {},
           ),
           RecomendCard(
             image: "lib/assets/images/image_2.png",
-            title: "Figuras",
-            title2: "Figures",
+            title: "Producto 2",
+            title2: "Info",
             price: 440,
             press: () {},
           ),
           RecomendCard(
             image: "lib/assets/images/image_3.png",
-            title: "Videojuegos",
-            title2: "Games",
+            title: "Producto 3",
+            title2: "info",
             price: 440,
             press: () {},
           ),

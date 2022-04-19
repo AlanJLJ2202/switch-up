@@ -13,7 +13,7 @@ class NavBar extends StatelessWidget {
       padding: EdgeInsets.only(
           left: kDefaultPadding * 2,
           right: kDefaultPadding * 2,
-          bottom: 0
+          bottom: 1
       ),
       height: 65,
       decoration: BoxDecoration(
@@ -34,11 +34,11 @@ class NavBar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.add_card, color: kPrimaryColor),
+            icon: Icon(Icons.apps, color: kPrimaryColor),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.help, color: kPrimaryColor),
+            icon: Icon(Icons.whatshot_rounded, color: kPrimaryColor),
           )
         ],
       ),
