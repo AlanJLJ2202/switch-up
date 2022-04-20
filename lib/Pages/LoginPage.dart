@@ -12,11 +12,17 @@ class _LoginPageState extends State<LoginPage>{
 
   bool isRememberMe = false;
 
+
+
+
+
+
+
   Widget buildEmail(){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Email',
           style: TextStyle(
               color: Colors.white,
