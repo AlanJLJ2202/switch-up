@@ -51,6 +51,8 @@ Widget ContainerLogo(){
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(50),
           topRight: Radius.circular(50),
+          bottomLeft: Radius.circular(19),
+          bottomRight: Radius.circular(19),
         )
     ),
     child: Image.asset("lib/assets/images/logoCoca.png"),
