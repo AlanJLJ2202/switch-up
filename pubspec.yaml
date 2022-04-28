@@ -30,6 +30,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #Added to work with the web service
+  http:
+  fluttertoast:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -1,7 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:switch_up/Pages/TabPage.dart';
 import 'package:switch_up/constants.dart';
+import 'package:http/http.dart' as http;
+import 'package:fluttertoast/fluttertoast.dart';
+
+import '../Components/BodyPage.dart';
+import '../Components/HomePage.dart';
 
 class LoginPage extends StatefulWidget{
   @override
@@ -9,14 +15,10 @@ class LoginPage extends StatefulWidget{
 }
 
 class _LoginPageState extends State<LoginPage>{
+  TextEditingController correo = TextEditingController();
+  TextEditingController contrasena = TextEditingController();
 
   bool isRememberMe = false;
-
-
-
-
-
-
 
   Widget buildEmail(){
     return Column(
@@ -47,6 +49,7 @@ class _LoginPageState extends State<LoginPage>{
           height: 60,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
+            controller: correo,
             style: TextStyle(
                 color: Colors.black87
             ),
@@ -97,6 +100,7 @@ class _LoginPageState extends State<LoginPage>{
           height: 60,
           child: TextField(
             obscureText: true,
+            controller: contrasena,
             style: TextStyle(
                 color: Colors.black87
             ),
@@ -113,7 +117,7 @@ class _LoginPageState extends State<LoginPage>{
                 )
             ),
           ),
-        )
+        ),
       ],
     );
   }
@@ -172,7 +176,7 @@ class _LoginPageState extends State<LoginPage>{
       width: double.infinity,
       child: RaisedButton(
         elevation: 20,
-        onPressed: () => print('Login Pressed'),
+        onPressed: () => login(),
         padding: EdgeInsets.all(15),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(55)
@@ -278,4 +282,27 @@ class _LoginPageState extends State<LoginPage>{
       ),
     );
   }
+
+  Future login() async {
+    var url = Uri.parse("https://switch-up.000webhostapp.com/Login.php");
+    var response = await http.post(url, body: {
+      "correo": correo.text,
+      "contrasena": contrasena.text,
+    });
+    var data = json.decode(response.body);
+    if (data == "Success") {
+      correo.clear();
+      contrasena.clear();
+      Fluttertoast.showToast(
+          msg: 'Inicio de sesion exitoso'
+      );
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage(),),);
+    } else {
+      Fluttertoast.showToast(
+        msg: "Usuario o contraseña incorrectos"
+      );
+
+    }
+  }
+
 }
