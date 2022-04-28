@@ -2,10 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:switch_up/Pages/TabPage.dart';
 import 'package:switch_up/constants.dart';
-import 'Components/HomePage.dart';
+import 'Pages/BodyPage.dart';
+import 'Pages/HomePage.dart';
 import 'Pages/InicioPage.dart';
+import 'Pages/ItemPage.dart';
 import 'Pages/LoginPage.dart';
 import 'Pages/PruebaPage.dart';
+import 'Pages/RegisterPage.dart';
 
 void main(){
   runApp(MyApp());
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget{
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: PruebaPage(),
+      home: LoginPage(),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
-import 'package:switch_up/Components/HomePage.dart';
+import 'package:switch_up/Pages/HomePage.dart';
 
 import 'ReturnPage.dart';
 
@@ -9,7 +9,7 @@ class PruebaPage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.deepPurpleAccent,
       body: ListView(
         //padding: EdgeInsets.all(100),
         children: <Widget>[
@@ -88,7 +88,7 @@ Widget ContainerDotted(){
             left: 20
           ),
           decoration: const BoxDecoration(
-              color: Colors.red,
+              color: Colors.deepPurpleAccent,
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20),
                 bottomRight: Radius.circular(20)
@@ -113,7 +113,7 @@ Widget ContainerDotted(){
               left: 20
           ),
           decoration: const BoxDecoration(
-              color: Colors.red,
+              color: Colors.deepPurpleAccent,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   bottomLeft: Radius.circular(20)

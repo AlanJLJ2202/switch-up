@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:switch_up/constants.dart';
 
-import 'HeaderWithSearchBox.dart';
-import 'RecomendadosLista.dart';
-import 'Recomends.dart';
-import 'TitleWithMoreBtn.dart';
+import '../Components/HeaderWithSearchBox.dart';
+import '../Components/RecomendadosLista.dart';
+import '../Components/Recomends.dart';
+import '../Components/TitleWithMoreBtn.dart';
 
 class BodyPage extends StatelessWidget{
   @override
@@ -24,12 +24,12 @@ class BodyPage extends StatelessWidget{
             press: () {},
           ),
           //Solo tomara el 40% del ancho
-          Recomends(),
+          const Recomends(),
           TitleWithMoreBtn(
               title: "Recomendados",
               press: () {}),
-          RecomendadosLista(),
-          SizedBox(
+          const RecomendadosLista(),
+          const SizedBox(
             height: kDefaultPadding,
           ),
         ],

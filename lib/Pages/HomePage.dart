@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:switch_up/constants.dart';
-import 'NavigationBar.dart';
+import '../Components/NavigationBar.dart';
 import 'BodyPage.dart';
 
 

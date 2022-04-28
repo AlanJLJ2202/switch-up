@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:switch_up/Pages/TabPage.dart';
 import 'package:switch_up/constants.dart';
 
+import 'RegisterPage.dart';
+
 class LoginPage extends StatefulWidget{
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -11,12 +13,6 @@ class LoginPage extends StatefulWidget{
 class _LoginPageState extends State<LoginPage>{
 
   bool isRememberMe = false;
-
-
-
-
-
-
 
   Widget buildEmail(){
     return Column(
@@ -192,9 +188,9 @@ class _LoginPageState extends State<LoginPage>{
 
   Widget buildSignUpBtn(){
     return GestureDetector(
-      onTap: () => print ("Sign up Pressed"),
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage())),
       child: RichText(
-        text: TextSpan(
+        text: const TextSpan(
           children: [
             TextSpan(
               text: 'No tiene una cuenta?  ',
@@ -252,7 +248,7 @@ class _LoginPageState extends State<LoginPage>{
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      'Bienvenido',
+                      'Inicia sesión',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 50,

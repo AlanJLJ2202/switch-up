@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class HeaderWithSearchBox extends StatelessWidget {
-  const HeaderWithSearchBox({
+class HeaderItem extends StatelessWidget {
+  const HeaderItem({
     Key? key,
     required this.size,
   }) : super(key: key);
@@ -25,7 +25,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                 bottom: 26 + kDefaultPadding
             ),
             height: size.height * 0.2 - 27,
-            decoration: const BoxDecoration(color: kPrimaryColor,
+            decoration: const BoxDecoration(color: Colors.deepPurpleAccent,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(46),
                   bottomRight: Radius.circular(46),
@@ -34,7 +34,7 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  'Me puse bien puto erizo xd',
+                  'Mis articulos',
                   style: Theme.of(context).textTheme.headline5?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
@@ -60,13 +60,12 @@ class HeaderWithSearchBox extends StatelessWidget {
                   BoxShadow(
                       offset: Offset(0,10),
                       blurRadius: 50,
-                      color: kPrimaryColor.withOpacity(0.30)
+                      color: Colors.deepPurpleAccent.withOpacity(0.30)
                   )
                 ],
               ),
             ),
           ),
-
         ],
       ),
     );
