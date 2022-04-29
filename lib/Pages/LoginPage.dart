@@ -5,10 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:switch_up/constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
-
-import '../Components/BodyPage.dart';
-import '../Components/HomePage.dart';
-
+import 'HomePage.dart';
 import 'RegisterPage.dart';
 
 class LoginPage extends StatefulWidget{
