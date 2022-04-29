@@ -1,7 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:switch_up/Pages/TabPage.dart';
 import 'package:switch_up/constants.dart';
+import 'package:http/http.dart' as http;
+import 'HomePage.dart';
 
 class RegisterPage extends StatefulWidget{
   @override
@@ -9,6 +14,11 @@ class RegisterPage extends StatefulWidget{
 }
 
 class _RegisterPageState extends State<RegisterPage>{
+  TextEditingController nombre = TextEditingController();
+  TextEditingController correo = TextEditingController();
+  TextEditingController contrasena = TextEditingController();
+  TextEditingController telefono = TextEditingController();
+  TextEditingController fechaNac = TextEditingController();
 
   bool isRememberMe = false;
 
@@ -42,6 +52,7 @@ class _RegisterPageState extends State<RegisterPage>{
           height: 60,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
+            controller: correo,
             style: TextStyle(
                 color: Colors.black87
             ),
@@ -90,7 +101,8 @@ class _RegisterPageState extends State<RegisterPage>{
               ]
           ),
           height: 60,
-          child: const TextField(
+          child: TextField(
+            controller: contrasena,
             obscureText: true,
             style: TextStyle(
                 color: Colors.black87
@@ -167,7 +179,7 @@ class _RegisterPageState extends State<RegisterPage>{
       width: 200,
       child: RaisedButton(
         elevation: 20,
-        onPressed: () => print('Login Pressed'),
+        onPressed: () => register(),
         padding: EdgeInsets.all(15),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(55)
@@ -279,155 +291,184 @@ class _RegisterPageState extends State<RegisterPage>{
       ),
     );
   }
+  Future register() async {
+    var url = Uri.parse("https://switch-up.000webhostapp.com/Usuarios/UsuarioAdd.php");
+    var response = await http.post(url, body: {
+      "nombre": nombre.text,
+      "correo": correo.text,
+      "contrasena": contrasena.text,
+      "telefono": telefono.text,
+      "telefono": fechaNac.text,
+    });
+    var data = json.decode(response.body);
+    if (data == "Success") {
+      correo.clear();
+      contrasena.clear();
+      Fluttertoast.showToast(
+          msg: 'Registro exitoso'
+      );
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage(),),);
+    } else {
+      Fluttertoast.showToast(
+          msg: "Registro incorrecto"
+      );
+
+    }
+  }
+  Widget buildNombre(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+          'Usuario',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.bold
+          ),
+        ),
+        SizedBox(height: 10),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: const [
+                BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6,
+                    offset: Offset(0,2)
+                )
+              ]
+          ),
+          height: 60,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            controller: nombre,
+            style: TextStyle(
+                color: Colors.black87
+            ),
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(top:14),
+                prefixIcon: Icon(
+                  Icons.account_circle_rounded,
+                  color: Color(0xff0E0E0E),
+                ),
+                hintText: 'User',
+                hintStyle: TextStyle(
+                    color: Colors.black38
+                )
+            ),
+          ),
+        )
+      ],
+    );
+  }
+  Widget buildPhone(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+          'Telefono',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.bold
+          ),
+        ),
+        SizedBox(height: 10),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: const [
+                BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6,
+                    offset: Offset(0,2)
+                )
+              ]
+          ),
+          height: 60,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            controller: telefono,
+            style: TextStyle(
+                color: Colors.black87
+            ),
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(top:14),
+                prefixIcon: Icon(
+                  Icons.phone,
+                  color: Color(0xff0E0E0E),
+                ),
+                hintText: 'Telephone',
+                hintStyle: TextStyle(
+                    color: Colors.black38
+                )
+            ),
+          ),
+        )
+      ],
+    );
+  }
+  Widget buildBirthDate(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+          'Fecha de nacimiento',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.bold
+          ),
+        ),
+        SizedBox(height: 10),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: const [
+                BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6,
+                    offset: Offset(0,2)
+                )
+              ]
+          ),
+          height: 60,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            controller: fechaNac,
+            style: TextStyle(
+                color: Colors.black87
+            ),
+            decoration: InputDecoration(
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(top:14),
+                prefixIcon: Icon(
+                  Icons.adb_sharp,
+                  color: Color(0xff0E0E0E),
+                ),
+                hintText: 'Birthdate',
+                hintStyle: TextStyle(
+                    color: Colors.black38
+                )
+            ),
+          ),
+        )
+      ],
+    );
+  }
 }
 //Nombre, Correo, Contraseña, Telefono, FechaNac, Imagen, Municipio
 
-Widget buildNombre(){
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      const Text(
-        'Usuario',
-        style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold
-        ),
-      ),
-      SizedBox(height: 10),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: const [
-              BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 6,
-                  offset: Offset(0,2)
-              )
-            ]
-        ),
-        height: 60,
-        child: const TextField(
-          keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-              color: Colors.black87
-          ),
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top:14),
-              prefixIcon: Icon(
-                Icons.account_circle_rounded,
-                color: Color(0xff0E0E0E),
-              ),
-              hintText: 'User',
-              hintStyle: TextStyle(
-                  color: Colors.black38
-              )
-          ),
-        ),
-      )
-    ],
-  );
-}
 
-Widget buildPhone(){
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      const Text(
-        'Telefono',
-        style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold
-        ),
-      ),
-      SizedBox(height: 10),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: const [
-              BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 6,
-                  offset: Offset(0,2)
-              )
-            ]
-        ),
-        height: 60,
-        child: const TextField(
-          keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-              color: Colors.black87
-          ),
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top:14),
-              prefixIcon: Icon(
-                Icons.phone,
-                color: Color(0xff0E0E0E),
-              ),
-              hintText: 'Telephone',
-              hintStyle: TextStyle(
-                  color: Colors.black38
-              )
-          ),
-        ),
-      )
-    ],
-  );
-}
 
-Widget buildBirthDate(){
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      const Text(
-        'Fecha de nacimiento',
-        style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold
-        ),
-      ),
-      SizedBox(height: 10),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: const [
-              BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 6,
-                  offset: Offset(0,2)
-              )
-            ]
-        ),
-        height: 60,
-        child: const TextField(
-          keyboardType: TextInputType.emailAddress,
-          style: TextStyle(
-              color: Colors.black87
-          ),
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top:14),
-              prefixIcon: Icon(
-                Icons.adb_sharp,
-                color: Color(0xff0E0E0E),
-              ),
-              hintText: 'Birthdate',
-              hintStyle: TextStyle(
-                  color: Colors.black38
-              )
-          ),
-        ),
-      )
-    ],
-  );
-}
+
+
