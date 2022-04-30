@@ -184,7 +184,7 @@ class _LoginPageState extends State<LoginPage>{
         child: Text(
           'Ingresar',
           style: TextStyle(
-            color: Colors.black,
+            color: Colors.deepPurpleAccent,
             fontSize: 18,
             fontWeight: FontWeight.bold
           ),
@@ -209,9 +209,8 @@ class _LoginPageState extends State<LoginPage>{
             ),
             TextSpan(
               text: 'Registrarse',
-
               style: TextStyle(
-                color: kPrimaryColor,
+                color: Colors.white,
                 fontSize: 18,
                 fontWeight: FontWeight.bold
               )
@@ -222,63 +221,102 @@ class _LoginPageState extends State<LoginPage>{
     );
   }
 
+  Widget titulo(){
+    return Container(
+      child: const Text(
+        'Inicia sesión',
+        style: TextStyle(
+        color: Colors.white,
+        fontSize: 50,
+        fontWeight: FontWeight.bold
+      ),
+      )
+    );
+  }
+
   @override
   Widget build (BuildContext context){
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle.light,
-        child: GestureDetector(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: double.infinity,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
+      body: ListView(
+        children: <Widget>[
+          Container(
+
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      kPrimaryColor,
-                      kPrimaryColor,
-                      Color(0xccbdb6b6),
+                      Colors.deepPurpleAccent.shade700,
+                      Colors.deepPurpleAccent.shade400,
+                      Colors.deepPurpleAccent.shade100,
                       Color(0xffffffff),
                     ]
-                  )
+                )
+            ),
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                    flex: 4,
+
+                    child: Container(
+                        child: titulo(),
+                        margin: EdgeInsets.only(top: height/11),
+                    )
                 ),
-                child: SingleChildScrollView(
-                  physics: AlwaysScrollableScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 25,
-                    vertical: 120
-                  ),
-                  child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Inicia sesión',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    SizedBox(height: 100),
-                    buildEmail(),
-                    SizedBox(height: 20),
-                    buildPassword(),
-                    buildForgotPassBtn(),
-                    buildRememberCb(),
-                    SizedBox(height: 20),
-                    buildLoginBtn(),
-                    buildSignUpBtn()
-                  ],
+                Expanded(flex: 3, child: SizedBox(height: height/15)),
+                Expanded(
+                    flex:4,
+                    child: Container(
+                        child: buildEmail(),
+                        margin: EdgeInsets.only(left: width/10, right: width/10),
+                    )
                 ),
+                Expanded(
+                    flex: 3,
+                    child: Container(
+                        child: buildPassword(),
+                        margin: EdgeInsets.only(left: width/10, right: width/10),
+                    )
                 ),
-              )
-            ],
-          ),
-        ),
-      ),
+                Expanded(
+                    flex: 1,
+                    child: Container(
+                        child: buildForgotPassBtn(),
+                        margin: EdgeInsets.only(right: width/10),
+                    )
+                ),
+                Expanded(
+                    flex: 1,
+                        child: Container(child: buildRememberCb(),
+                        margin: EdgeInsets.only(left: width/10),
+                    )
+                ),
+                Expanded(
+                    flex: 5,
+                    child: Container(
+                        child: buildLoginBtn(),
+                        margin: EdgeInsets.only(left: width/4, right: width/4),
+                        padding: EdgeInsets.only(top: 5, bottom: 5),
+                    )
+                ),
+                Expanded(
+                    flex: 5,
+                    child: Container(
+                        child: buildSignUpBtn(),
+                        margin: EdgeInsets.only(top: height/15),
+                    )
+                ),
+              ],
+            ),
+          )
+        ],
+      )
+
     );
   }
 

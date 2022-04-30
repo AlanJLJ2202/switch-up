@@ -34,7 +34,7 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  'Me puse bien puto erizo xd',
+                  'Switch-Up',
                   style: Theme.of(context).textTheme.headline5?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
