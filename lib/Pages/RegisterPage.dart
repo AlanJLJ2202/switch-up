@@ -298,7 +298,7 @@ class _RegisterPageState extends State<RegisterPage>{
       "correo": correo.text,
       "contrasena": contrasena.text,
       "telefono": telefono.text,
-      "telefono": fechaNac.text,
+      "fechaNacimiento": fechaNac.text,
     });
     var data = json.decode(response.body);
     if (data == "Success") {

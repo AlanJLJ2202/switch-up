@@ -26,13 +26,13 @@ class TitleAndPrice extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .headline4
-                      ?.copyWith(color: kTextColor, fontWeight: FontWeight.bold),
+                      ?.copyWith(color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
                   text: country,
                   style: const TextStyle(
                     fontSize: 20,
-                    color: kPrimaryColor,
+                    color: Colors.black,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
@@ -45,7 +45,7 @@ class TitleAndPrice extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .headline5
-                ?.copyWith(color: kPrimaryColor),
+                ?.copyWith(color: Colors.black),
           )
         ],
       ),

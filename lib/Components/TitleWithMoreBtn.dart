@@ -22,7 +22,7 @@ class TitleWithMoreBtn extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-            color: kPrimaryColor,
+            color: Colors.deepPurpleAccent,
             onPressed: () {},
             child: Text(
               "Mas",
@@ -69,7 +69,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.only(right: kDefaultPadding / 4),
               height: 7,
-              color: kPrimaryColor.withOpacity(0.2),
+              color: Colors.black.withOpacity(0.2),
             ),
           )
         ],

@@ -25,7 +25,7 @@ class Body extends StatelessWidget {
                       topRight: Radius.circular(20),
                     ),
                   ),
-                  color: kPrimaryColor,
+                  color: Colors.deepPurpleAccent,
                   onPressed: () {},
                   child: Text(
                     "Switch Now",

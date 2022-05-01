@@ -25,7 +25,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                 bottom: 26 + kDefaultPadding
             ),
             height: size.height * 0.2 - 27,
-            decoration: const BoxDecoration(color: kPrimaryColor,
+            decoration: const BoxDecoration(color: Colors.deepPurpleAccent,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(46),
                   bottomRight: Radius.circular(46),
@@ -60,7 +60,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                   BoxShadow(
                       offset: Offset(0,10),
                       blurRadius: 50,
-                      color: kPrimaryColor.withOpacity(0.30)
+                      color: Colors.deepPurpleAccent.withOpacity(0.30)
                   )
                 ],
               ),

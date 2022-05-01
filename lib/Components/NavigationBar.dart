@@ -17,11 +17,11 @@ class NavBar extends StatelessWidget {
       ),
       height: 65,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.deepPurpleAccent,
         boxShadow: [BoxShadow(
             offset: Offset(0,-10),
             blurRadius: 35,
-            color: kPrimaryColor.withOpacity(0.38)
+            color: Colors.white.withOpacity(0.38)
         ),
         ],
       ),
@@ -30,15 +30,15 @@ class NavBar extends StatelessWidget {
         children: <Widget>[
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.home, color: kPrimaryColor),
+            icon: Icon(Icons.home, color: Colors.white),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.apps, color: kPrimaryColor),
+            icon: Icon(Icons.apps, color: Colors.white),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.whatshot_rounded, color: kPrimaryColor),
+            icon: Icon(Icons.whatshot_rounded, color: Colors.white),
           )
         ],
       ),

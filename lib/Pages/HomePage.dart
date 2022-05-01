@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
-      body: BodyPage(),
-      bottomNavigationBar: NavBar(),
+          appBar: buildAppBar(),
+          body: BodyPage(),
+          bottomNavigationBar: NavBar()
     );
   }
 }
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget{
 
  AppBar buildAppBar(){
   return AppBar(
-    backgroundColor: kPrimaryColor,
+    backgroundColor: Colors.deepPurpleAccent,
     elevation: 0,
     leading: IconButton(
       icon: Icon(Icons.menu),

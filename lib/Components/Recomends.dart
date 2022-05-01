@@ -94,7 +94,7 @@ class RecomendCard extends StatelessWidget {
                     BoxShadow(
                       offset: Offset(0,10),
                       blurRadius: 50,
-                      color: kPrimaryColor.withOpacity(0.23),
+                      color: Colors.white.withOpacity(0.23),
                     ),
                   ]
               ),
@@ -111,7 +111,7 @@ class RecomendCard extends StatelessWidget {
                         TextSpan(
                           text: "$title2".toUpperCase(),
                           style: TextStyle(
-                            color: kPrimaryColor.withOpacity(0.5),
+                            color: Colors.black.withOpacity(0.5),
                           ),
                         )
                       ],
@@ -120,7 +120,7 @@ class RecomendCard extends StatelessWidget {
                   Spacer(),
                   Text('\$$price',
                     style:
-                    Theme.of(context).textTheme.button?.copyWith(color: kPrimaryColor),
+                    Theme.of(context).textTheme.button?.copyWith(color: Colors.black),
                   ),
                 ],
               ),

@@ -31,7 +31,7 @@ class ImageAndIcons extends StatelessWidget {
                       child: IconButton(
                         padding:
                         EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                        icon: SvgPicture.asset("assets/icons/back_arrow.svg"),
+                        icon: SvgPicture.asset("lib/assets/icons/back_arrow.svg"),
                         onPressed: () {
                           Navigator.pop(context);
                         },
@@ -58,7 +58,7 @@ class ImageAndIcons extends StatelessWidget {
                   BoxShadow(
                     offset: Offset(0, 10),
                     blurRadius: 60,
-                    color: kPrimaryColor.withOpacity(0.29),
+                    color: Colors.deepPurpleAccent.withOpacity(0.29),
                   ),
                 ],
                 image: DecorationImage(

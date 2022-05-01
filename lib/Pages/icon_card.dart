@@ -19,13 +19,13 @@ class IconCard extends StatelessWidget {
       height: 62,
       width: 62,
       decoration: BoxDecoration(
-        color: kBackgroundColor,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(6),
         boxShadow: [
           BoxShadow(
             offset: Offset(0, 15),
             blurRadius: 22,
-            color: kPrimaryColor.withOpacity(0.22),
+            color: Colors.deepPurpleAccent.withOpacity(0.22),
           ),
           BoxShadow(
             offset: Offset(-15, -15),
