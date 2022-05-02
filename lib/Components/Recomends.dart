@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:switch_up/Pages/Details_screen.dart';
 
 import '../constants.dart';
 
@@ -81,7 +82,9 @@ class RecomendCard extends StatelessWidget {
         children: <Widget>[
           Image.asset(image),
           GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),);
+            },
             child: Container(
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(

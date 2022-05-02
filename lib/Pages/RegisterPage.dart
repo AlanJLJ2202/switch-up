@@ -305,7 +305,7 @@ class _RegisterPageState extends State<RegisterPage>{
       correo.clear();
       contrasena.clear();
       Fluttertoast.showToast(
-          msg: 'Registro exitoso'
+          msg: "Registro exitoso"
       );
       Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage(),),);
     } else {
