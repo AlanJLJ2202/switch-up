@@ -58,7 +58,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
               text,
               style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.bold
+                  fontWeight: FontWeight.w300
               ),
             ),
           ),

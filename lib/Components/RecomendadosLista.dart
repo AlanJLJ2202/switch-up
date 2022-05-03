@@ -13,9 +13,13 @@ class RecomendadosLista extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
-          Recomendados(image: "lib/assets/images/bottom_img_1.png",
+          Recomendados(image: "lib/assets/images/bookk.jpg",
           ),
-          Recomendados(image: "lib/assets/images/bottom_img_2.png",
+          Recomendados(image: "lib/assets/images/VideoGamesCategory.jpg",
+          ),
+          Recomendados(image: "lib/assets/images/ShoeCategory.jpg",
+          ),
+          Recomendados(image: "lib/assets/images/FiguresCategory.jpg",
           ),
         ],
       ),
@@ -39,12 +43,12 @@ class Recomendados extends StatelessWidget {
       onTap: () {},
       child: Container(
         margin: EdgeInsets.only(
-            left: kDefaultPadding,
+            left: kDefaultPadding - 5,
             top: kDefaultPadding / 2,
             bottom: kDefaultPadding / 2
         ),
-        width: size.width * 0.8,
-        height: 185,
+        width: size.width * 0.3,
+        height: 130,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
