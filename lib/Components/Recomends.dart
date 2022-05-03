@@ -10,48 +10,102 @@ class Recomends extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          RecomendCard(
-            image: "lib/assets/images/figura.png",
-            title: "Figura",
-            title2: "Muñeca Colecc.",
-            price: 440,
-            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
-          ),
-          RecomendCard(
-            image: "lib/assets/images/image_2.png",
-            title: "Producto 2",
-            title2: "Info",
-            price: 440,
-            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
-          ),
-          RecomendCard(
-            image: "lib/assets/images/image_3.png",
-            title: "Producto 3",
-            title2: "info",
-            price: 440,
-            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
-          ),
-          RecomendCard(
-            image: "lib/assets/images/image_1.png",
-            title: "Libros",
-            title2: "Books",
-            price: 440,
-            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
-          ),
-          RecomendCard(
-            image: "lib/assets/images/image_2.png",
-            title: "Libros",
-            title2: "Books",
-            price: 440,
-            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
-          ),
-        ],
-      ),
-    );
+    return Column(
+        //scrollDirection: Axis.vertical,
+      children: <Widget>[
+        Row(
+          children: [
+            RecomendCard(
+              image: "lib/assets/images/figura.png",
+              title: "Figura",
+              title2: "Muñeca Colecc.",
+              price: 440,
+              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+            ),
+            RecomendCard(
+              image: "lib/assets/images/book.jpg",
+              title: "Libro",
+              title2: "Harry Potter",
+              price: 440,
+              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+            ),
+            ]
+    ),
+            Row(
+              children: <Widget>[
+                RecomendCard(
+                  image: "lib/assets/images/game.jpg",
+                  title: "Videojuego",
+                  title2: "Xbox",
+                  price: 440,
+                  funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+                ),
+                RecomendCard(
+                  image: "lib/assets/images/tennis.jpg",
+                  title: "Calzado",
+                  title2: "Tennis",
+                  price: 440,
+                  funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                RecomendCard(
+                image: "lib/assets/images/image_2.png",
+                title: "Planta",
+                title2: "Weed",
+                price: 440,
+                funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+                ),
+                RecomendCard(
+                  image: "lib/assets/images/image_2.png",
+                  title: "Libros",
+                  title2: "Books",
+                  price: 440,
+                  funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+                ),
+              ],
+            ),
+        Row(
+          children: <Widget>[
+            RecomendCard(
+              image: "lib/assets/images/image_2.png",
+              title: "Libros",
+              title2: "Books",
+              price: 440,
+              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+            ),
+            RecomendCard(
+              image: "lib/assets/images/image_2.png",
+              title: "Libros",
+              title2: "Books",
+              price: 440,
+              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+            ),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            RecomendCard(
+              image: "lib/assets/images/image_2.png",
+              title: "Libros",
+              title2: "Books",
+              price: 440,
+              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+            ),
+            RecomendCard(
+              image: "lib/assets/images/image_2.png",
+              title: "Libros",
+              title2: "Books",
+              price: 440,
+              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+            ),
+          ],
+        ),
+
+        ]
+          );
   }
 }
 
@@ -73,22 +127,31 @@ class RecomendCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: kDefaultPadding,
         top: kDefaultPadding / 2,
-        bottom: kDefaultPadding * 2.5,
+        //bottom: kDefaultPadding * 2.5,
       ),
       width: size.width * 0.4,
       child: Column(
         children: <Widget>[
-          Image.asset(image),
+          Container(
+            height: 185,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+      image: DecorationImage(
+        fit: BoxFit.cover,
+        image: AssetImage(image),
+      ),
+          ),
+          ),
           GestureDetector(
             onTap: funcion,
             child: Container(
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                   ),
@@ -107,8 +170,8 @@ class RecomendCard extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: "$title\n".toUpperCase(),
-                          style: Theme.of(context).textTheme.button,
-
+                          style: //Theme.of(context).textTheme.button,
+                          TextStyle(color: Colors.deepPurpleAccent)
                         ),
                         TextSpan(
                           text: "$title2".toUpperCase(),
