@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:switch_up/Pages/ItemDetails.dart';
 import '../constants.dart';
 
+import 'BusinessDetails.dart';
 import 'Image_and_icons.dart';
 import 'Title_and_price.dart';
 
@@ -27,7 +28,9 @@ class Body extends StatelessWidget {
                     ),
                   ),
                   color: Colors.deepPurpleAccent,
-                  onPressed: () {},
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> BusinessDetails(),
+                    ),
+                  ),
                   child: const Text(
                     "Switch Now",
                     style: TextStyle(

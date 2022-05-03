@@ -34,12 +34,13 @@ class NavBar extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.apps, color: Colors.white),
+            icon: Icon(Icons.whatshot_rounded, color: Colors.white),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.whatshot_rounded, color: Colors.white),
-          )
+            icon: Icon(Icons.apps, color: Colors.white),
+          ),
+
         ],
       ),
     );

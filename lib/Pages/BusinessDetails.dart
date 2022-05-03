@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import '../Components/TextWidget.dart';
 
 
-class UserDetails extends StatelessWidget{
+class BusinessDetails extends StatelessWidget{
+
+  //final String nombre;
+  //final String ciudad;
+  //final String whatsapp;
+  //final String facebook;
+
+  //BusinessDetails(this.nombre, this.ciudad, this.whatsapp, this.facebook);
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,25 +32,19 @@ class UserDetails extends StatelessWidget{
                   ),
                 ),*/
                 Container(
-                  margin: EdgeInsets.only(top: 20),
+                  margin: EdgeInsets.only(top: height*0.2),
                   child: Image.asset("lib/assets/images/user.png",
                     width: 150,
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20, bottom: 30),
-                  child: TextWidget('Nombre ' + 'Apellido', 23, FontWeight.w700, Colors.deepPurpleAccent),
+                  child: TextWidget('Susana Lopez', 23, FontWeight.w700, Colors.deepPurpleAccent),
                   width: 200,
                 ),
-                TitleAndTextField(width, 'Nombre', 'Nombre'),
-                TitleAndTextField(width, 'Apellido paterno', 'Apellido paterno'),
-                TitleAndTextField(width, 'Apellido materno', 'Apellido materno'),
-                TitleAndTextField(width, 'Correo', 'nombre@correo.com'),
-                TitleAndTextField(width, 'Telefono', '477 365 54 67'),
-                TitleAndTextField(width, 'Ciudad de residencia', 'León de los Aldama'),
-                TitleAndTextField(width, 'Estado de residencia', 'Guanajuato'),
-                TitleAndTextField(width, 'Facebook', 'Daniel Mojica'),
-
+                TitleAndTextField(width, 'Ciudad', 'Purisima del Rincón'),
+                TitleAndTextField(width, 'Whatsapp', '4771072633'),
+                TitleAndTextField(width, 'Facebook', 'Susana Lpz.'),
               ],
             )
           ],

@@ -197,9 +197,9 @@ class _LoginPageState extends State<LoginPage>{
     return GestureDetector(
       onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage())),
       child: RichText(
-        text: const TextSpan(
+        text: TextSpan(
           children: [
-            TextSpan(
+            const TextSpan(
               text: 'No tiene una cuenta?  ',
               style: TextStyle(
                 color: Colors.white,
@@ -210,7 +210,7 @@ class _LoginPageState extends State<LoginPage>{
             TextSpan(
               text: 'Registrarse',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.deepPurpleAccent.shade100,
                 fontSize: 18,
                 fontWeight: FontWeight.bold
               )

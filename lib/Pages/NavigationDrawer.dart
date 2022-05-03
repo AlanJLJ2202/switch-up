@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
+import 'LoginPage.dart';
+import 'UserDetails.dart';
+
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
   @override
   Widget build(BuildContext context) {
     final name = 'Usuario';
-    final email = 'Usuario@gamil.com';
+    final email = 'Usuario@gmail.com';
     final urlImage =
         'https://storage.googleapis.com/media.clinicavisualyauditiva.com/images/2019/11/211fd983-default-user-image.png';
 
@@ -18,7 +21,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               urlImage: urlImage,
               name: name,
               email: email,
-              onClicked:() {},
+              onClicked:() => Navigator.push(context, MaterialPageRoute(builder: (context) => UserDetails())),
             ),
             Container(
               padding: padding,
@@ -54,9 +57,9 @@ class NavigationDrawerWidget extends StatelessWidget {
                   Divider(color: Colors.white70),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Configuracion',
-                    icon: Icons.construction,
-                    onClicked: () => selectedItem(context, 3),
+                    text: 'Cerrar sesión',
+                    icon: Icons.transit_enterexit_outlined,
+                    onClicked: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage())),
                   ),
                 ],
               ),
