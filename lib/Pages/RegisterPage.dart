@@ -143,6 +143,19 @@ class _RegisterPageState extends State<RegisterPage>{
     );
   }
 
+  Widget titulo(){
+    return Container(
+
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            alignment: Alignment.topCenter,
+            fit: BoxFit.fitHeight,
+            image: AssetImage("lib/assets/images/LogoSwitch.png") ,
+          )
+      ),
+    );
+  }
+
   Widget buildRememberCb(){
     return Container(
       height: 20,
@@ -175,7 +188,7 @@ class _RegisterPageState extends State<RegisterPage>{
 
   Widget buildLoginBtn(){
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 45),
+      padding: EdgeInsets.symmetric(vertical: 20),
       width: 200,
       child: RaisedButton(
         elevation: 20,
@@ -242,9 +255,9 @@ class _RegisterPageState extends State<RegisterPage>{
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Colors.deepPurpleAccent,
+                          Colors.deepPurpleAccent.shade700,
+                          Colors.deepPurpleAccent.shade400,
                           Colors.deepPurpleAccent.shade100,
-                          Color(0xccbdb6b6),
                           Color(0xffffffff),
                         ]
                     )
@@ -258,13 +271,9 @@ class _RegisterPageState extends State<RegisterPage>{
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      const Text(
-                        'Registro',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 50,
-                            fontWeight: FontWeight.bold
-                        ),
+                      Container(
+                          height: 135,
+                          child: titulo()
                       ),
                       SizedBox(height: 30),
                       buildNombre(),
@@ -278,7 +287,7 @@ class _RegisterPageState extends State<RegisterPage>{
                       buildBirthDate(),
                       //buildForgotPassBtn(),
                       //buildRememberCb(),
-                      SizedBox(height: 20),
+                      SizedBox(height: 5),
                       buildLoginBtn(),
                       //buildSignUpBtn()
                     ],

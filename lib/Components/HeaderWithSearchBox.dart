@@ -34,13 +34,13 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  'Switch-Up',
+                  'Inicio',
                   style: Theme.of(context).textTheme.headline5?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
-                Image.asset("lib/assets/images/logo.png")
+                Image.asset("lib/assets/images/LogoSwitch.png")
               ],
             ),
           ),
