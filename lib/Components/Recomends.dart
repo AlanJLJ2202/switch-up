@@ -15,39 +15,39 @@ class Recomends extends StatelessWidget {
       child: Row(
         children: [
           RecomendCard(
-            image: "lib/assets/images/image_1.png",
-            title: "Producto 1",
-            title2: "Info",
+            image: "lib/assets/images/figura.png",
+            title: "Figura",
+            title2: "Muñeca Colecc.",
             price: 440,
-            press: () {},
+            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
           ),
           RecomendCard(
             image: "lib/assets/images/image_2.png",
             title: "Producto 2",
             title2: "Info",
             price: 440,
-            press: () {},
+            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
           ),
           RecomendCard(
             image: "lib/assets/images/image_3.png",
             title: "Producto 3",
             title2: "info",
             price: 440,
-            press: () {},
+            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
           ),
           RecomendCard(
             image: "lib/assets/images/image_1.png",
             title: "Libros",
             title2: "Books",
             price: 440,
-            press: () {},
+            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
           ),
           RecomendCard(
             image: "lib/assets/images/image_2.png",
             title: "Libros",
             title2: "Books",
             price: 440,
-            press: () {},
+            funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
           ),
         ],
       ),
@@ -62,12 +62,13 @@ class RecomendCard extends StatelessWidget {
     required this.title,
     required this.title2,
     required this.price,
-    required this.press,
+    required this.funcion,
   }) : super(key: key);
 
   final String image, title, title2;
   final int price;
-  final Function press;
+  final Function() funcion;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -82,9 +83,7 @@ class RecomendCard extends StatelessWidget {
         children: <Widget>[
           Image.asset(image),
           GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),);
-            },
+            onTap: funcion,
             child: Container(
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
@@ -120,11 +119,7 @@ class RecomendCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
-                  Text('\$$price',
-                    style:
-                    Theme.of(context).textTheme.button?.copyWith(color: Colors.black),
-                  ),
+
                 ],
               ),
             ),

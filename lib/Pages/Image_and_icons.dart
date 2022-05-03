@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
+import 'HomePage.dart';
 import 'icon_card.dart';
 
 class ImageAndIcons extends StatelessWidget {
@@ -33,15 +34,15 @@ class ImageAndIcons extends StatelessWidget {
                         EdgeInsets.symmetric(horizontal: kDefaultPadding),
                         icon: SvgPicture.asset("lib/assets/icons/back_arrow.svg"),
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage(),),);
                         },
                       ),
                     ),
                     Spacer(),
-                    IconCard(icon: "lib/assets/icons/heart-icon.svg"),
-                    IconCard(icon: "lib/assets/icons/heart-icon.svg"),
-                    IconCard(icon: "lib/assets/icons/heart-icon.svg"),
-                    IconCard(icon: "lib/assets/icons/heart-icon.svg"),
+                    IconCard(icono: Icons.accessibility_rounded, color: Colors.blue),
+                    IconCard(icono: Icons.medical_services, color: Colors.red),
+                    IconCard(icono: Icons.account_circle_sharp, color: Colors.green),
+                    IconCard(icono: Icons.whatshot_rounded, color: Colors.orange),
                   ],
                 ),
               ),
@@ -61,10 +62,10 @@ class ImageAndIcons extends StatelessWidget {
                     color: Colors.deepPurpleAccent.withOpacity(0.29),
                   ),
                 ],
-                image: DecorationImage(
+                image: const DecorationImage(
                   alignment: Alignment.centerLeft,
                   fit: BoxFit.cover,
-                  image: AssetImage("lib/assets/images/img.png"),
+                  image: AssetImage("lib/assets/images/figura.png"),
                 ),
               ),
             ),

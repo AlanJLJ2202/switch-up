@@ -6,11 +6,11 @@ class TitleAndPrice extends StatelessWidget {
     Key? key,
     required this.title,
     required this.country,
-    required this.price,
+
   }) : super(key: key);
 
   final String title, country;
-  final int price;
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class TitleAndPrice extends StatelessWidget {
                   text: "$title\n",
                   style: Theme.of(context)
                       .textTheme
-                      .headline4
+                      .headline5
                       ?.copyWith(color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
@@ -39,14 +39,6 @@ class TitleAndPrice extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(),
-          Text(
-            "\$$price",
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                ?.copyWith(color: Colors.black),
-          )
         ],
       ),
     );
