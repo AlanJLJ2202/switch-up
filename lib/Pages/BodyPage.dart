@@ -20,15 +20,15 @@ class BodyPage extends StatelessWidget{
         children: <Widget>[
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(
+              title: "Categorias",
+              press: () {}),
+          const RecomendadosLista(),
+          TitleWithMoreBtn(
             title: "Productos",
             press: () {},
           ),
           //Solo tomara el 40% del ancho
           const Recomends(),
-          TitleWithMoreBtn(
-              title: "Recomendados",
-              press: () {}),
-          const RecomendadosLista(),
           const SizedBox(
             height: kDefaultPadding,
           ),
