@@ -223,14 +223,14 @@ class _LoginPageState extends State<LoginPage>{
 
   Widget titulo(){
     return Container(
-      child: const Text(
-        'Inicia sesión',
-        style: TextStyle(
-        color: Colors.white,
-        fontSize: 50,
-        fontWeight: FontWeight.bold
+
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            alignment: Alignment.topCenter,
+            fit: BoxFit.fitHeight,
+            image: AssetImage("lib/assets/images/LogoSwitch.png") ,
+          )
       ),
-      )
     );
   }
 
@@ -261,14 +261,15 @@ class _LoginPageState extends State<LoginPage>{
             child: Column(
               children: <Widget>[
                 Expanded(
-                    flex: 4,
-
+                    flex: 7,
                     child: Container(
+
                         child: titulo(),
                         margin: EdgeInsets.only(top: height/11),
+
                     )
                 ),
-                Expanded(flex: 3, child: SizedBox(height: height/15)),
+                Expanded(flex: 1, child: SizedBox(height: height/15)),
                 Expanded(
                     flex:4,
                     child: Container(
