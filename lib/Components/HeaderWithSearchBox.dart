@@ -13,7 +13,7 @@ class HeaderWithSearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
+      margin: EdgeInsets.only(bottom: kDefaultPadding * 1),
       //Esto nos da solo un 20% de la pantalla
       height: size.height * 0.2,
       child: Stack(
@@ -34,10 +34,11 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  'Inicio',
-                  style: Theme.of(context).textTheme.headline5?.copyWith(
+                  'Intercambiar nunca fue tan facil',
+                  style: TextStyle(
+                     fontSize: 15,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w300),
                 ),
                 Spacer(),
                 Image.asset("lib/assets/images/LogoSwitch.png")

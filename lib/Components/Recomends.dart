@@ -16,16 +16,16 @@ class Recomends extends StatelessWidget {
         Row(
           children: [
             RecomendCard(
-              image: "lib/assets/images/figura.png",
+              image: "lib/assets/images/snich.jpg",
               title: "Figura",
-              title2: "Muñeca Colecc.",
+              title2: "Snich Dorada",
               price: 440,
               funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
             ),
             RecomendCard(
-              image: "lib/assets/images/book.jpg",
-              title: "Libro",
-              title2: "Harry Potter",
+              image: "lib/assets/images/tennis.jpg",
+              title: "Calzado",
+              title2: "Sneakers",
               price: 440,
               funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
             ),
@@ -41,9 +41,9 @@ class Recomends extends StatelessWidget {
                   funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
                 ),
                 RecomendCard(
-                  image: "lib/assets/images/tennis.jpg",
-                  title: "Calzado",
-                  title2: "Tennis",
+                  image: "lib/assets/images/figura.png",
+                  title: "Figura",
+                  title2: "Fig. Coleccion",
                   price: 440,
                   funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
                 ),
@@ -52,9 +52,9 @@ class Recomends extends StatelessWidget {
             Row(
               children: <Widget>[
                 RecomendCard(
-                image: "lib/assets/images/image_2.png",
-                title: "Planta",
-                title2: "Weed",
+                image: "lib/assets/images/book.jpg",
+                title: "Libro",
+                title2: "Harry Potter",
                 price: 440,
                 funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
                 ),
