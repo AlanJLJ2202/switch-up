@@ -7,10 +7,12 @@ import 'package:switch_up/constants.dart';
 import 'Pages/BodyPage.dart';
 import 'Pages/HomePage.dart';
 import 'Pages/InicioPage.dart';
+import 'Pages/ItemDetails.dart';
 import 'Pages/ItemPage.dart';
 import 'Pages/LoginPage.dart';
 import 'Pages/PruebaPage.dart';
 import 'Pages/RegisterPage.dart';
+import 'Pages/UserDetails.dart';
 
 void main(){
   runApp(MyApp());
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget{
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: UserDetails(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:switch_up/Pages/ItemDetails.dart';
 import '../constants.dart';
 
 import 'Image_and_icons.dart';
@@ -12,7 +13,7 @@ class Body extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ImageAndIcons(size: size),
-          TitleAndPrice(title: "Product", country: "Product", price: 440),
+          TitleAndPrice(title: "Muñeca Enfermera Otaku", country: "Figura Coleccionable"),
           SizedBox(height: kDefaultPadding),
           Row(
             children: <Widget>[
@@ -20,14 +21,14 @@ class Body extends StatelessWidget {
                 width: size.width / 2,
                 height: 84,
                 child: FlatButton(
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(20),
                     ),
                   ),
                   color: Colors.deepPurpleAccent,
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     "Switch Now",
                     style: TextStyle(
                       color: Colors.white,
@@ -38,8 +39,8 @@ class Body extends StatelessWidget {
               ),
               Expanded(
                 child: FlatButton(
-                  onPressed: () {},
-                  child: Text("Description"),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemDetails(),),),
+                  child: Text("Descripcion"),
                 ),
               ),
             ],
