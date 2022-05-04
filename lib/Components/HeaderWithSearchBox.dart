@@ -41,7 +41,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                       fontWeight: FontWeight.w300),
                 ),
                 Spacer(),
-                Image.asset("lib/assets/images/LogoSwitch.png")
+                Image.asset("lib/assets/images/LogoSwitch.png", width: 130)
               ],
             ),
           ),

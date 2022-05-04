@@ -16,7 +16,7 @@ class BodyDetailsGame extends StatelessWidget {
       child: Column(
         children: <Widget>[
           ImageAndIconsGame(size: size),
-          TitleAndPriceGame(title: "Lego Batman", country: "Videojuego"),
+          TitleAndPriceGame(title: "Left 4 Dead 2", country: "Videojuego"),
           SizedBox(height: kDefaultPadding),
           Row(
             children: <Widget>[

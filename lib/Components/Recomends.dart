@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:switch_up/Pages/DetailsGame.dart';
+import 'package:switch_up/Pages/DetailsShoes.dart';
+import 'package:switch_up/Pages/DetailsSnitch.dart';
 import 'package:switch_up/Pages/Details_screen.dart';
 
 import '../constants.dart';
@@ -20,25 +23,25 @@ class Recomends extends StatelessWidget {
               title: "Figura",
               title2: "Snich Dorada",
               price: 440,
-              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsSnitch(),),),
             ),
             RecomendCard(
               image: "lib/assets/images/tennis.jpg",
               title: "Calzado",
               title2: "Sneakers",
               price: 440,
-              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+              funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsShoes(),),),
             ),
             ]
     ),
             Row(
               children: <Widget>[
                 RecomendCard(
-                  image: "lib/assets/images/game.jpg",
+                  image: "lib/assets/images/game.jpeg",
                   title: "Videojuego",
                   title2: "Xbox",
                   price: 440,
-                  funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsScreen(),),),
+                  funcion: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsGame(),),),
                 ),
                 RecomendCard(
                   image: "lib/assets/images/figura.png",

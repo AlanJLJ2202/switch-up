@@ -65,7 +65,7 @@ class ImageAndIconsGame extends StatelessWidget {
                 image: const DecorationImage(
                   alignment: Alignment.center,
                   fit: BoxFit.cover,
-                  image: AssetImage("lib/assets/images/game.jpg"),
+                  image: AssetImage("lib/assets/images/game.jpeg"),
                 ),
               ),
             ),

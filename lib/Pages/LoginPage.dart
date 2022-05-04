@@ -238,86 +238,90 @@ class _LoginPageState extends State<LoginPage>{
   Widget build (BuildContext context){
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        body: ListView(
+          children: <Widget>[
+            Container(
 
-    return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          Container(
+              height: height,
+              width: width,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.deepPurpleAccent.shade700,
+                        Colors.deepPurpleAccent.shade400,
+                        Colors.deepPurpleAccent.shade100,
+                        Color(0xffffffff),
+                      ]
+                  )
+              ),
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                      flex: 7,
+                      child: Container(
 
-            height: height,
-            width: width,
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.deepPurpleAccent.shade700,
-                      Colors.deepPurpleAccent.shade400,
-                      Colors.deepPurpleAccent.shade100,
-                      Color(0xffffffff),
-                    ]
-                )
-            ),
-            child: Column(
-              children: <Widget>[
-                Expanded(
-                    flex: 7,
-                    child: Container(
+                          child: titulo(),
+                          margin: EdgeInsets.only(top: height/11),
 
-                        child: titulo(),
-                        margin: EdgeInsets.only(top: height/11),
+                      )
+                  ),
+                  Expanded(flex: 1, child: SizedBox(height: height/15)),
+                  Expanded(
+                      flex:4,
+                      child: Container(
+                          child: buildEmail(),
+                          margin: EdgeInsets.only(left: width/10, right: width/10),
+                      )
+                  ),
+                  Expanded(
+                      flex: 3,
+                      child: Container(
+                          child: buildPassword(),
+                          margin: EdgeInsets.only(left: width/10, right: width/10),
+                      )
+                  ),
+                  Expanded(
+                      flex: 1,
+                      child: Container(
+                          child: buildForgotPassBtn(),
+                          margin: EdgeInsets.only(right: width/10),
+                      )
+                  ),
+                  Expanded(
+                      flex: 1,
+                          child: Container(child: buildRememberCb(),
+                          margin: EdgeInsets.only(left: width/10),
+                      )
+                  ),
+                  Expanded(
+                      flex: 5,
+                      child: Container(
+                          child: buildLoginBtn(),
+                          margin: EdgeInsets.only(left: width/4, right: width/4),
+                          padding: EdgeInsets.only(top: 5, bottom: 5),
+                      )
+                  ),
+                  Expanded(
+                      flex: 5,
+                      child: Container(
+                          child: buildSignUpBtn(),
+                          margin: EdgeInsets.only(top: height/15),
+                      )
+                  ),
+                ],
+              ),
+            )
+          ],
+        )
 
-                    )
-                ),
-                Expanded(flex: 1, child: SizedBox(height: height/15)),
-                Expanded(
-                    flex:4,
-                    child: Container(
-                        child: buildEmail(),
-                        margin: EdgeInsets.only(left: width/10, right: width/10),
-                    )
-                ),
-                Expanded(
-                    flex: 3,
-                    child: Container(
-                        child: buildPassword(),
-                        margin: EdgeInsets.only(left: width/10, right: width/10),
-                    )
-                ),
-                Expanded(
-                    flex: 1,
-                    child: Container(
-                        child: buildForgotPassBtn(),
-                        margin: EdgeInsets.only(right: width/10),
-                    )
-                ),
-                Expanded(
-                    flex: 1,
-                        child: Container(child: buildRememberCb(),
-                        margin: EdgeInsets.only(left: width/10),
-                    )
-                ),
-                Expanded(
-                    flex: 5,
-                    child: Container(
-                        child: buildLoginBtn(),
-                        margin: EdgeInsets.only(left: width/4, right: width/4),
-                        padding: EdgeInsets.only(top: 5, bottom: 5),
-                    )
-                ),
-                Expanded(
-                    flex: 5,
-                    child: Container(
-                        child: buildSignUpBtn(),
-                        margin: EdgeInsets.only(top: height/15),
-                    )
-                ),
-              ],
-            ),
-          )
-        ],
-      )
-
+      ),
     );
   }
 
