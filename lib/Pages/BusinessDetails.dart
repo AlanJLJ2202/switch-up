@@ -39,12 +39,12 @@ class BusinessDetails extends StatelessWidget{
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20, bottom: 30),
-                  child: TextWidget('Susana Lopez', 23, FontWeight.w700, Colors.deepPurpleAccent),
+                  child: TextWidget('Luis Carreón', 23, FontWeight.w700, Colors.deepPurpleAccent),
                   width: 200,
                 ),
-                TitleAndTextField(width, 'Ciudad', 'Purisima del Rincón'),
-                TitleAndTextField(width, 'Whatsapp', '4771072633'),
-                TitleAndTextField(width, 'Facebook', 'Susana Lpz.'),
+                TitleAndTextField(width, 'Ciudad', 'San Francisco del Rincón'),
+                TitleAndTextField(width, 'Whatsapp', '477 130 6525'),
+                TitleAndTextField(width, 'Facebook', 'Emmanuel Carreón Aranda.'),
               ],
             )
           ],
