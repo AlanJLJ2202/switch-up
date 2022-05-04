@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:switch_up/Pages/BodyDetails.dart';
+import 'package:switch_up/Pages/DetailsGame.dart';
+import 'package:switch_up/Pages/DetailsShoes.dart';
+import 'package:switch_up/Pages/DetailsSnitch.dart';
 import 'package:switch_up/Pages/Details_screen.dart';
+import 'package:switch_up/Pages/ItemDetailsTennis.dart';
 import 'package:switch_up/Pages/TabPage.dart';
 import 'package:switch_up/constants.dart';
 import 'Pages/BodyPage.dart';
@@ -30,11 +34,7 @@ class MyApp extends StatelessWidget{
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      home: DetailsShoes(),
     );
   }
 }
-
-
-
-
